@@ -72,7 +72,7 @@ class StoreTest(BaseTest):
                 StoreModel('test').save_to_db()
 
                 resp = client.get('/stores')
-                self.assertDictEqual({'stores': ['id': 1, 'name': 'test', 'items': []}]},
+                self.assertDictEqual({'stores': [{'id': 1, 'name': 'test', 'items': []}]},
                                      json.loads(resp.data))
 
 
